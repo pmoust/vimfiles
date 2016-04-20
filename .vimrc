@@ -53,6 +53,9 @@ let g:neocomplete#enable_auto_select = 1
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
+" Autoremove trailing whitespace on :w
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
